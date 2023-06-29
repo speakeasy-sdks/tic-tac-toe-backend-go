@@ -1,4 +1,9 @@
 configVersion: 1.0.0
+management:
+  docChecksum: 8ec132ab79d26472fccfd64e44bb0a25
+  docVersion: 1.0.0
+  speakeasyVersion: 1.51.3
+  generationVersion: 2.52.2
 generation:
   comments:
     disableComments: false
@@ -8,6 +13,6 @@ generation:
   singleTagPerOp: false
   tagNamespacingDisabled: false
 go:
-  version: 0.0.1
+  version: 1.0.0
   maxMethodParams: 0
   packageName: tic-tac-toe-backends
