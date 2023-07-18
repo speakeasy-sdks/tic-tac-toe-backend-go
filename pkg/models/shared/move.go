@@ -38,8 +38,22 @@ type MoveAfterStateGrid struct {
 	Cells *string
 }
 
+func (o *MoveAfterStateGrid) GetCells() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Cells
+}
+
 type MoveAfterStatePossibleMovesAfterStateGrid struct {
 	Cells *string
+}
+
+func (o *MoveAfterStatePossibleMovesAfterStateGrid) GetCells() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Cells
 }
 
 type MoveAfterStatePossibleMovesAfterStateStartingMark string
@@ -74,8 +88,29 @@ type MoveAfterStatePossibleMovesAfterState struct {
 	StartingMark *MoveAfterStatePossibleMovesAfterStateStartingMark
 }
 
+func (o *MoveAfterStatePossibleMovesAfterState) GetGrid() *MoveAfterStatePossibleMovesAfterStateGrid {
+	if o == nil {
+		return nil
+	}
+	return o.Grid
+}
+
+func (o *MoveAfterStatePossibleMovesAfterState) GetStartingMark() *MoveAfterStatePossibleMovesAfterStateStartingMark {
+	if o == nil {
+		return nil
+	}
+	return o.StartingMark
+}
+
 type MoveAfterStatePossibleMovesBeforeStateGrid struct {
 	Cells *string
+}
+
+func (o *MoveAfterStatePossibleMovesBeforeStateGrid) GetCells() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Cells
 }
 
 type MoveAfterStatePossibleMovesBeforeStateStartingMark string
@@ -110,6 +145,20 @@ type MoveAfterStatePossibleMovesBeforeState struct {
 	StartingMark *MoveAfterStatePossibleMovesBeforeStateStartingMark
 }
 
+func (o *MoveAfterStatePossibleMovesBeforeState) GetGrid() *MoveAfterStatePossibleMovesBeforeStateGrid {
+	if o == nil {
+		return nil
+	}
+	return o.Grid
+}
+
+func (o *MoveAfterStatePossibleMovesBeforeState) GetStartingMark() *MoveAfterStatePossibleMovesBeforeStateStartingMark {
+	if o == nil {
+		return nil
+	}
+	return o.StartingMark
+}
+
 type MoveAfterStatePossibleMovesMark string
 
 const (
@@ -142,6 +191,34 @@ type MoveAfterStatePossibleMoves struct {
 	BeforeState *MoveAfterStatePossibleMovesBeforeState
 	CellIndex   *int64
 	Mark        *MoveAfterStatePossibleMovesMark
+}
+
+func (o *MoveAfterStatePossibleMoves) GetAfterState() *MoveAfterStatePossibleMovesAfterState {
+	if o == nil {
+		return nil
+	}
+	return o.AfterState
+}
+
+func (o *MoveAfterStatePossibleMoves) GetBeforeState() *MoveAfterStatePossibleMovesBeforeState {
+	if o == nil {
+		return nil
+	}
+	return o.BeforeState
+}
+
+func (o *MoveAfterStatePossibleMoves) GetCellIndex() *int64 {
+	if o == nil {
+		return nil
+	}
+	return o.CellIndex
+}
+
+func (o *MoveAfterStatePossibleMoves) GetMark() *MoveAfterStatePossibleMovesMark {
+	if o == nil {
+		return nil
+	}
+	return o.Mark
 }
 
 type MoveAfterStateStartingMark string
@@ -210,7 +287,77 @@ type MoveAfterState struct {
 	WinningCells   []int64
 }
 
+func (o *MoveAfterState) GetCurrentMark() *MoveAfterStateCurrentMark {
+	if o == nil {
+		return nil
+	}
+	return o.CurrentMark
+}
+
+func (o *MoveAfterState) GetGameNotStarted() *bool {
+	if o == nil {
+		return nil
+	}
+	return o.GameNotStarted
+}
+
+func (o *MoveAfterState) GetGameOver() *bool {
+	if o == nil {
+		return nil
+	}
+	return o.GameOver
+}
+
+func (o *MoveAfterState) GetGrid() *MoveAfterStateGrid {
+	if o == nil {
+		return nil
+	}
+	return o.Grid
+}
+
+func (o *MoveAfterState) GetPossibleMoves() []MoveAfterStatePossibleMoves {
+	if o == nil {
+		return nil
+	}
+	return o.PossibleMoves
+}
+
+func (o *MoveAfterState) GetStartingMark() *MoveAfterStateStartingMark {
+	if o == nil {
+		return nil
+	}
+	return o.StartingMark
+}
+
+func (o *MoveAfterState) GetTie() *bool {
+	if o == nil {
+		return nil
+	}
+	return o.Tie
+}
+
+func (o *MoveAfterState) GetWinner() *MoveAfterStateWinner {
+	if o == nil {
+		return nil
+	}
+	return o.Winner
+}
+
+func (o *MoveAfterState) GetWinningCells() []int64 {
+	if o == nil {
+		return nil
+	}
+	return o.WinningCells
+}
+
 // Move - A Move containing the before and after GameStates.
 type Move struct {
 	AfterState []MoveAfterState
+}
+
+func (o *Move) GetAfterState() []MoveAfterState {
+	if o == nil {
+		return nil
+	}
+	return o.AfterState
 }

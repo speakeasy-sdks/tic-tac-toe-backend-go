@@ -10,6 +10,7 @@ import (
 	"net/http"
 	"strings"
 	"tic-tac-toe-backends/pkg/models/operations"
+	"tic-tac-toe-backends/pkg/models/sdkerrors"
 	"tic-tac-toe-backends/pkg/utils"
 	"time"
 )
@@ -112,8 +113,8 @@ func New(opts ...SDKOption) *TicTacToeBackends {
 		sdkConfiguration: sdkConfiguration{
 			Language:          "go",
 			OpenAPIDocVersion: "1.0.0",
-			SDKVersion:        "1.0.0",
-			GenVersion:        "2.52.2",
+			SDKVersion:        "1.1.0",
+			GenVersion:        "2.70.0",
 		},
 	}
 	for _, opt := range opts {
@@ -173,6 +174,8 @@ func (s *TicTacToeBackends) Get(ctx context.Context) (*operations.GetResponse, e
 		switch {
 		case utils.MatchContentType(contentType, `*/*`):
 			res.Body = rawBody
+		default:
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	}
 
@@ -221,6 +224,8 @@ func (s *TicTacToeBackends) GetVersion(ctx context.Context) (*operations.GetVers
 		switch {
 		case utils.MatchContentType(contentType, `*/*`):
 			res.Body = rawBody
+		default:
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	}
 
@@ -279,6 +284,8 @@ func (s *TicTacToeBackends) PutGames(ctx context.Context, request []byte) (*oper
 		switch {
 		case utils.MatchContentType(contentType, `*/*`):
 			res.Body = rawBody
+		default:
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	}
 

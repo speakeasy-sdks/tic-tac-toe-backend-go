@@ -12,3 +12,31 @@ type GetResponse struct {
 	StatusCode  int
 	RawResponse *http.Response
 }
+
+func (o *GetResponse) GetBody() []byte {
+	if o == nil {
+		return nil
+	}
+	return o.Body
+}
+
+func (o *GetResponse) GetContentType() string {
+	if o == nil {
+		return ""
+	}
+	return o.ContentType
+}
+
+func (o *GetResponse) GetStatusCode() int {
+	if o == nil {
+		return 0
+	}
+	return o.StatusCode
+}
+
+func (o *GetResponse) GetRawResponse() *http.Response {
+	if o == nil {
+		return nil
+	}
+	return o.RawResponse
+}

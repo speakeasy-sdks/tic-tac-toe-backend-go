@@ -6,3 +6,10 @@ package shared
 type Version struct {
 	Version *string
 }
+
+func (o *Version) GetVersion() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Version
+}

@@ -41,3 +41,17 @@ type MoveParameter struct {
 	CellIndex *int64
 	Move      *MoveParameterMove
 }
+
+func (o *MoveParameter) GetCellIndex() *int64 {
+	if o == nil {
+		return nil
+	}
+	return o.CellIndex
+}
+
+func (o *MoveParameter) GetMove() *MoveParameterMove {
+	if o == nil {
+		return nil
+	}
+	return o.Move
+}
