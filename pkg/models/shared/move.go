@@ -350,7 +350,6 @@ func (o *MoveAfterState) GetWinningCells() []int64 {
 	return o.WinningCells
 }
 
-// Move - A Move containing the before and after GameStates.
 type Move struct {
 	AfterState []MoveAfterState
 }
