@@ -2,7 +2,6 @@
 
 package shared
 
-// Version - The package version.
 type Version struct {
 	Version *string
 }
