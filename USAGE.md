@@ -7,7 +7,7 @@ package main
 import(
 	"context"
 	"log"
-	"tic-tac-toe-backends"
+	tictactoebackends "tic-tac-toe-backends"
 )
 
 func main() {

@@ -22,7 +22,7 @@ package main
 import(
 	"context"
 	"log"
-	"tic-tac-toe-backends"
+	tictactoebackends "tic-tac-toe-backends"
 )
 
 func main() {
@@ -64,7 +64,7 @@ package main
 import(
 	"context"
 	"log"
-	"tic-tac-toe-backends"
+	tictactoebackends "tic-tac-toe-backends"
 )
 
 func main() {
@@ -106,7 +106,7 @@ package main
 import(
 	"context"
 	"log"
-	"tic-tac-toe-backends"
+	tictactoebackends "tic-tac-toe-backends"
 	"tic-tac-toe-backends/pkg/models/shared"
 )
 
