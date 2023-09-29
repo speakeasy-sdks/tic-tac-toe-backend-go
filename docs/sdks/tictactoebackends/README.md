@@ -1,5 +1,6 @@
 # TicTacToeBackends SDK
 
+
 ## Overview
 
 Game Engine API for Tic Tac Toe: Game Engine API for Tic Tac Toe
@@ -114,7 +115,7 @@ func main() {
     s := tictactoebackends.New()
 
     ctx := context.Background()
-    res, err := s.TicTacToeBackends.PutGames(ctx, []byte("corrupti"))
+    res, err := s.TicTacToeBackends.PutGames(ctx, []byte("GjnqQzHiDc"))
     if err != nil {
         log.Fatal(err)
     }
