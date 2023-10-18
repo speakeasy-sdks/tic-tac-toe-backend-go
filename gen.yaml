@@ -2,8 +2,8 @@ configVersion: 1.0.0
 management:
   docChecksum: 8ec132ab79d26472fccfd64e44bb0a25
   docVersion: 1.0.0
-  speakeasyVersion: 1.91.3
-  generationVersion: 2.139.1
+  speakeasyVersion: 1.101.0
+  generationVersion: 2.161.0
 generation:
   comments:
     disableComments: false
@@ -14,9 +14,10 @@ generation:
   tagNamespacingDisabled: false
 features:
   go:
-    core: 2.90.0
+    core: 2.91.5
     globalServerURLs: 2.82.0
 go:
-  version: 1.4.0
+  version: 1.5.0
+  flattenGlobalSecurity: true
   maxMethodParams: 0
   packageName: tic-tac-toe-backends
