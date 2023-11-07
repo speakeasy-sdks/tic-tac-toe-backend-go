@@ -16,14 +16,14 @@ package main
 import (
 	"context"
 	"log"
-	tictactoebackends "tic-tac-toe-backends"
+	tictactoebackends "tic-tac-toe-backends/v2"
 )
 
 func main() {
 	s := tictactoebackends.New()
 
 	ctx := context.Background()
-	res, err := s.TicTacToeBackends.Get(ctx)
+	res, err := s.Get(ctx)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -76,8 +76,6 @@ Here's an example of one such pagination call:
 # Error Handling
 
 Handling errors in your SDK should largely match your expectations.  All operations return a response object or an error, they will never return both.  When specified by the OpenAPI spec document, the SDK will return the appropriate subclass.
-
-
 <!-- End Error Handling -->
 
 
@@ -96,14 +94,13 @@ You can override the default server globally using the `WithServerIndex` option 
 
 For example:
 
-
 ```go
 package main
 
 import (
 	"context"
 	"log"
-	tictactoebackends "tic-tac-toe-backends"
+	tictactoebackends "tic-tac-toe-backends/v2"
 )
 
 func main() {
@@ -112,7 +109,7 @@ func main() {
 	)
 
 	ctx := context.Background()
-	res, err := s.TicTacToeBackends.Get(ctx)
+	res, err := s.Get(ctx)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -129,14 +126,13 @@ func main() {
 
 The default server can also be overridden globally using the `WithServerURL` option when initializing the SDK client instance. For example:
 
-
 ```go
 package main
 
 import (
 	"context"
 	"log"
-	tictactoebackends "tic-tac-toe-backends"
+	tictactoebackends "tic-tac-toe-backends/v2"
 )
 
 func main() {
@@ -145,7 +141,7 @@ func main() {
 	)
 
 	ctx := context.Background()
-	res, err := s.TicTacToeBackends.Get(ctx)
+	res, err := s.Get(ctx)
 	if err != nil {
 		log.Fatal(err)
 	}

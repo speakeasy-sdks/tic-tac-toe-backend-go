@@ -7,18 +7,18 @@ import (
 	"fmt"
 )
 
-type MoveAfterStateCurrentMark string
+type CurrentMark string
 
 const (
-	MoveAfterStateCurrentMarkX MoveAfterStateCurrentMark = "X"
-	MoveAfterStateCurrentMarkO MoveAfterStateCurrentMark = "O"
+	CurrentMarkX CurrentMark = "X"
+	CurrentMarkO CurrentMark = "O"
 )
 
-func (e MoveAfterStateCurrentMark) ToPointer() *MoveAfterStateCurrentMark {
+func (e CurrentMark) ToPointer() *CurrentMark {
 	return &e
 }
 
-func (e *MoveAfterStateCurrentMark) UnmarshalJSON(data []byte) error {
+func (e *CurrentMark) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -27,47 +27,47 @@ func (e *MoveAfterStateCurrentMark) UnmarshalJSON(data []byte) error {
 	case "X":
 		fallthrough
 	case "O":
-		*e = MoveAfterStateCurrentMark(v)
+		*e = CurrentMark(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for MoveAfterStateCurrentMark: %v", v)
+		return fmt.Errorf("invalid value for CurrentMark: %v", v)
 	}
 }
 
-type MoveAfterStateGrid struct {
+type Grid struct {
 	Cells *string
 }
 
-func (o *MoveAfterStateGrid) GetCells() *string {
+func (o *Grid) GetCells() *string {
 	if o == nil {
 		return nil
 	}
 	return o.Cells
 }
 
-type MoveAfterStatePossibleMovesAfterStateGrid struct {
+type MoveGrid struct {
 	Cells *string
 }
 
-func (o *MoveAfterStatePossibleMovesAfterStateGrid) GetCells() *string {
+func (o *MoveGrid) GetCells() *string {
 	if o == nil {
 		return nil
 	}
 	return o.Cells
 }
 
-type MoveAfterStatePossibleMovesAfterStateStartingMark string
+type MoveSchemasStartingMark string
 
 const (
-	MoveAfterStatePossibleMovesAfterStateStartingMarkX MoveAfterStatePossibleMovesAfterStateStartingMark = "X"
-	MoveAfterStatePossibleMovesAfterStateStartingMarkO MoveAfterStatePossibleMovesAfterStateStartingMark = "O"
+	MoveSchemasStartingMarkX MoveSchemasStartingMark = "X"
+	MoveSchemasStartingMarkO MoveSchemasStartingMark = "O"
 )
 
-func (e MoveAfterStatePossibleMovesAfterStateStartingMark) ToPointer() *MoveAfterStatePossibleMovesAfterStateStartingMark {
+func (e MoveSchemasStartingMark) ToPointer() *MoveSchemasStartingMark {
 	return &e
 }
 
-func (e *MoveAfterStatePossibleMovesAfterStateStartingMark) UnmarshalJSON(data []byte) error {
+func (e *MoveSchemasStartingMark) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -76,55 +76,55 @@ func (e *MoveAfterStatePossibleMovesAfterStateStartingMark) UnmarshalJSON(data [
 	case "X":
 		fallthrough
 	case "O":
-		*e = MoveAfterStatePossibleMovesAfterStateStartingMark(v)
+		*e = MoveSchemasStartingMark(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for MoveAfterStatePossibleMovesAfterStateStartingMark: %v", v)
+		return fmt.Errorf("invalid value for MoveSchemasStartingMark: %v", v)
 	}
 }
 
-type MoveAfterStatePossibleMovesAfterState struct {
-	Grid         *MoveAfterStatePossibleMovesAfterStateGrid
-	StartingMark *MoveAfterStatePossibleMovesAfterStateStartingMark
+type MoveAfterState struct {
+	Grid         *MoveGrid
+	StartingMark *MoveSchemasStartingMark
 }
 
-func (o *MoveAfterStatePossibleMovesAfterState) GetGrid() *MoveAfterStatePossibleMovesAfterStateGrid {
+func (o *MoveAfterState) GetGrid() *MoveGrid {
 	if o == nil {
 		return nil
 	}
 	return o.Grid
 }
 
-func (o *MoveAfterStatePossibleMovesAfterState) GetStartingMark() *MoveAfterStatePossibleMovesAfterStateStartingMark {
+func (o *MoveAfterState) GetStartingMark() *MoveSchemasStartingMark {
 	if o == nil {
 		return nil
 	}
 	return o.StartingMark
 }
 
-type MoveAfterStatePossibleMovesBeforeStateGrid struct {
+type MoveSchemasGrid struct {
 	Cells *string
 }
 
-func (o *MoveAfterStatePossibleMovesBeforeStateGrid) GetCells() *string {
+func (o *MoveSchemasGrid) GetCells() *string {
 	if o == nil {
 		return nil
 	}
 	return o.Cells
 }
 
-type MoveAfterStatePossibleMovesBeforeStateStartingMark string
+type MoveStartingMark string
 
 const (
-	MoveAfterStatePossibleMovesBeforeStateStartingMarkX MoveAfterStatePossibleMovesBeforeStateStartingMark = "X"
-	MoveAfterStatePossibleMovesBeforeStateStartingMarkO MoveAfterStatePossibleMovesBeforeStateStartingMark = "O"
+	MoveStartingMarkX MoveStartingMark = "X"
+	MoveStartingMarkO MoveStartingMark = "O"
 )
 
-func (e MoveAfterStatePossibleMovesBeforeStateStartingMark) ToPointer() *MoveAfterStatePossibleMovesBeforeStateStartingMark {
+func (e MoveStartingMark) ToPointer() *MoveStartingMark {
 	return &e
 }
 
-func (e *MoveAfterStatePossibleMovesBeforeStateStartingMark) UnmarshalJSON(data []byte) error {
+func (e *MoveStartingMark) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -133,44 +133,44 @@ func (e *MoveAfterStatePossibleMovesBeforeStateStartingMark) UnmarshalJSON(data 
 	case "X":
 		fallthrough
 	case "O":
-		*e = MoveAfterStatePossibleMovesBeforeStateStartingMark(v)
+		*e = MoveStartingMark(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for MoveAfterStatePossibleMovesBeforeStateStartingMark: %v", v)
+		return fmt.Errorf("invalid value for MoveStartingMark: %v", v)
 	}
 }
 
-type MoveAfterStatePossibleMovesBeforeState struct {
-	Grid         *MoveAfterStatePossibleMovesBeforeStateGrid
-	StartingMark *MoveAfterStatePossibleMovesBeforeStateStartingMark
+type BeforeState struct {
+	Grid         *MoveSchemasGrid
+	StartingMark *MoveStartingMark
 }
 
-func (o *MoveAfterStatePossibleMovesBeforeState) GetGrid() *MoveAfterStatePossibleMovesBeforeStateGrid {
+func (o *BeforeState) GetGrid() *MoveSchemasGrid {
 	if o == nil {
 		return nil
 	}
 	return o.Grid
 }
 
-func (o *MoveAfterStatePossibleMovesBeforeState) GetStartingMark() *MoveAfterStatePossibleMovesBeforeStateStartingMark {
+func (o *BeforeState) GetStartingMark() *MoveStartingMark {
 	if o == nil {
 		return nil
 	}
 	return o.StartingMark
 }
 
-type MoveAfterStatePossibleMovesMark string
+type Mark string
 
 const (
-	MoveAfterStatePossibleMovesMarkX MoveAfterStatePossibleMovesMark = "X"
-	MoveAfterStatePossibleMovesMarkO MoveAfterStatePossibleMovesMark = "O"
+	MarkX Mark = "X"
+	MarkO Mark = "O"
 )
 
-func (e MoveAfterStatePossibleMovesMark) ToPointer() *MoveAfterStatePossibleMovesMark {
+func (e Mark) ToPointer() *Mark {
 	return &e
 }
 
-func (e *MoveAfterStatePossibleMovesMark) UnmarshalJSON(data []byte) error {
+func (e *Mark) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -179,60 +179,60 @@ func (e *MoveAfterStatePossibleMovesMark) UnmarshalJSON(data []byte) error {
 	case "X":
 		fallthrough
 	case "O":
-		*e = MoveAfterStatePossibleMovesMark(v)
+		*e = Mark(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for MoveAfterStatePossibleMovesMark: %v", v)
+		return fmt.Errorf("invalid value for Mark: %v", v)
 	}
 }
 
-type MoveAfterStatePossibleMoves struct {
-	AfterState  *MoveAfterStatePossibleMovesAfterState
-	BeforeState *MoveAfterStatePossibleMovesBeforeState
+type PossibleMoves struct {
+	AfterState  *MoveAfterState
+	BeforeState *BeforeState
 	CellIndex   *int64
-	Mark        *MoveAfterStatePossibleMovesMark
+	Mark        *Mark
 }
 
-func (o *MoveAfterStatePossibleMoves) GetAfterState() *MoveAfterStatePossibleMovesAfterState {
+func (o *PossibleMoves) GetAfterState() *MoveAfterState {
 	if o == nil {
 		return nil
 	}
 	return o.AfterState
 }
 
-func (o *MoveAfterStatePossibleMoves) GetBeforeState() *MoveAfterStatePossibleMovesBeforeState {
+func (o *PossibleMoves) GetBeforeState() *BeforeState {
 	if o == nil {
 		return nil
 	}
 	return o.BeforeState
 }
 
-func (o *MoveAfterStatePossibleMoves) GetCellIndex() *int64 {
+func (o *PossibleMoves) GetCellIndex() *int64 {
 	if o == nil {
 		return nil
 	}
 	return o.CellIndex
 }
 
-func (o *MoveAfterStatePossibleMoves) GetMark() *MoveAfterStatePossibleMovesMark {
+func (o *PossibleMoves) GetMark() *Mark {
 	if o == nil {
 		return nil
 	}
 	return o.Mark
 }
 
-type MoveAfterStateStartingMark string
+type StartingMark string
 
 const (
-	MoveAfterStateStartingMarkX MoveAfterStateStartingMark = "X"
-	MoveAfterStateStartingMarkO MoveAfterStateStartingMark = "O"
+	StartingMarkX StartingMark = "X"
+	StartingMarkO StartingMark = "O"
 )
 
-func (e MoveAfterStateStartingMark) ToPointer() *MoveAfterStateStartingMark {
+func (e StartingMark) ToPointer() *StartingMark {
 	return &e
 }
 
-func (e *MoveAfterStateStartingMark) UnmarshalJSON(data []byte) error {
+func (e *StartingMark) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -241,25 +241,25 @@ func (e *MoveAfterStateStartingMark) UnmarshalJSON(data []byte) error {
 	case "X":
 		fallthrough
 	case "O":
-		*e = MoveAfterStateStartingMark(v)
+		*e = StartingMark(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for MoveAfterStateStartingMark: %v", v)
+		return fmt.Errorf("invalid value for StartingMark: %v", v)
 	}
 }
 
-type MoveAfterStateWinner string
+type Winner string
 
 const (
-	MoveAfterStateWinnerX MoveAfterStateWinner = "X"
-	MoveAfterStateWinnerO MoveAfterStateWinner = "O"
+	WinnerX Winner = "X"
+	WinnerO Winner = "O"
 )
 
-func (e MoveAfterStateWinner) ToPointer() *MoveAfterStateWinner {
+func (e Winner) ToPointer() *Winner {
 	return &e
 }
 
-func (e *MoveAfterStateWinner) UnmarshalJSON(data []byte) error {
+func (e *Winner) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -268,82 +268,82 @@ func (e *MoveAfterStateWinner) UnmarshalJSON(data []byte) error {
 	case "X":
 		fallthrough
 	case "O":
-		*e = MoveAfterStateWinner(v)
+		*e = Winner(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for MoveAfterStateWinner: %v", v)
+		return fmt.Errorf("invalid value for Winner: %v", v)
 	}
 }
 
-type MoveAfterState struct {
-	CurrentMark    *MoveAfterStateCurrentMark
+type AfterState struct {
+	CurrentMark    *CurrentMark
 	GameNotStarted *bool
 	GameOver       *bool
-	Grid           *MoveAfterStateGrid
-	PossibleMoves  []MoveAfterStatePossibleMoves
-	StartingMark   *MoveAfterStateStartingMark
+	Grid           *Grid
+	PossibleMoves  []PossibleMoves
+	StartingMark   *StartingMark
 	Tie            *bool
-	Winner         *MoveAfterStateWinner
+	Winner         *Winner
 	WinningCells   []int64
 }
 
-func (o *MoveAfterState) GetCurrentMark() *MoveAfterStateCurrentMark {
+func (o *AfterState) GetCurrentMark() *CurrentMark {
 	if o == nil {
 		return nil
 	}
 	return o.CurrentMark
 }
 
-func (o *MoveAfterState) GetGameNotStarted() *bool {
+func (o *AfterState) GetGameNotStarted() *bool {
 	if o == nil {
 		return nil
 	}
 	return o.GameNotStarted
 }
 
-func (o *MoveAfterState) GetGameOver() *bool {
+func (o *AfterState) GetGameOver() *bool {
 	if o == nil {
 		return nil
 	}
 	return o.GameOver
 }
 
-func (o *MoveAfterState) GetGrid() *MoveAfterStateGrid {
+func (o *AfterState) GetGrid() *Grid {
 	if o == nil {
 		return nil
 	}
 	return o.Grid
 }
 
-func (o *MoveAfterState) GetPossibleMoves() []MoveAfterStatePossibleMoves {
+func (o *AfterState) GetPossibleMoves() []PossibleMoves {
 	if o == nil {
 		return nil
 	}
 	return o.PossibleMoves
 }
 
-func (o *MoveAfterState) GetStartingMark() *MoveAfterStateStartingMark {
+func (o *AfterState) GetStartingMark() *StartingMark {
 	if o == nil {
 		return nil
 	}
 	return o.StartingMark
 }
 
-func (o *MoveAfterState) GetTie() *bool {
+func (o *AfterState) GetTie() *bool {
 	if o == nil {
 		return nil
 	}
 	return o.Tie
 }
 
-func (o *MoveAfterState) GetWinner() *MoveAfterStateWinner {
+func (o *AfterState) GetWinner() *Winner {
 	if o == nil {
 		return nil
 	}
 	return o.Winner
 }
 
-func (o *MoveAfterState) GetWinningCells() []int64 {
+func (o *AfterState) GetWinningCells() []int64 {
 	if o == nil {
 		return nil
 	}
@@ -351,10 +351,10 @@ func (o *MoveAfterState) GetWinningCells() []int64 {
 }
 
 type Move struct {
-	AfterState []MoveAfterState
+	AfterState []AfterState
 }
 
-func (o *Move) GetAfterState() []MoveAfterState {
+func (o *Move) GetAfterState() []AfterState {
 	if o == nil {
 		return nil
 	}

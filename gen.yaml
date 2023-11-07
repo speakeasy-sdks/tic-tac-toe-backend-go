@@ -2,24 +2,28 @@ configVersion: 1.0.0
 management:
   docChecksum: 8ec132ab79d26472fccfd64e44bb0a25
   docVersion: 1.0.0
-  speakeasyVersion: 1.108.1
-  generationVersion: 2.172.4
+  speakeasyVersion: 1.114.1
+  generationVersion: 2.181.1
 generation:
-  comments:
-    disableComments: false
-    omitDescriptionIfSummaryPresent: false
-  baseServerURL: ""
-  repoURL: https://github.com/speakeasy-sdks/tic-tac-toe-backend-go.git
+  comments: {}
   sdkClassName: tic-tac-toe-backends
-  singleTagPerOp: false
-  tagNamespacingDisabled: false
+  repoURL: https://github.com/speakeasy-sdks/tic-tac-toe-backend-go.git
 features:
   go:
-    core: 2.94.0
+    core: 3.1.0
     globalServerURLs: 2.82.0
 go:
-  version: 1.6.0
+  version: 2.0.0
+  clientServerStatusCodesAsErrors: true
   flattenGlobalSecurity: true
+  imports:
+    option: openapi
+    paths:
+      callbacks: pkg/models/callbacks
+      errors: pkg/models/sdkerrors
+      operations: pkg/models/operations
+      shared: pkg/models/shared
+      webhooks: pkg/models/webhooks
   installationURL: https://github.com/speakeasy-sdks/tic-tac-toe-backend-go
   maxMethodParams: 0
   packageName: tic-tac-toe-backends

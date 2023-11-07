@@ -23,14 +23,14 @@ package main
 import(
 	"context"
 	"log"
-	tictactoebackends "tic-tac-toe-backends"
+	tictactoebackends "tic-tac-toe-backends/v2"
 )
 
 func main() {
     s := tictactoebackends.New()
 
     ctx := context.Background()
-    res, err := s.TicTacToeBackends.Get(ctx)
+    res, err := s.Get(ctx)
     if err != nil {
         log.Fatal(err)
     }
@@ -65,14 +65,14 @@ package main
 import(
 	"context"
 	"log"
-	tictactoebackends "tic-tac-toe-backends"
+	tictactoebackends "tic-tac-toe-backends/v2"
 )
 
 func main() {
     s := tictactoebackends.New()
 
     ctx := context.Background()
-    res, err := s.TicTacToeBackends.GetVersion(ctx)
+    res, err := s.GetVersion(ctx)
     if err != nil {
         log.Fatal(err)
     }
@@ -107,15 +107,15 @@ package main
 import(
 	"context"
 	"log"
-	tictactoebackends "tic-tac-toe-backends"
-	"tic-tac-toe-backends/pkg/models/shared"
+	tictactoebackends "tic-tac-toe-backends/v2"
+	"tic-tac-toe-backends/v2/pkg/models/shared"
 )
 
 func main() {
     s := tictactoebackends.New()
 
     ctx := context.Background()
-    res, err := s.TicTacToeBackends.PutGames(ctx, []byte("GjnqQzHiDc"))
+    res, err := s.PutGames(ctx, []byte("0x8BCDbF9B8f"))
     if err != nil {
         log.Fatal(err)
     }

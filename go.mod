@@ -1,4 +1,4 @@
-module tic-tac-toe-backends
+module tic-tac-toe-backends/v2
 
 go 1.14
 

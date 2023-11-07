@@ -7,14 +7,14 @@ package main
 import (
 	"context"
 	"log"
-	tictactoebackends "tic-tac-toe-backends"
+	tictactoebackends "tic-tac-toe-backends/v2"
 )
 
 func main() {
 	s := tictactoebackends.New()
 
 	ctx := context.Background()
-	res, err := s.TicTacToeBackends.Get(ctx)
+	res, err := s.Get(ctx)
 	if err != nil {
 		log.Fatal(err)
 	}

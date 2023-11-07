@@ -9,9 +9,9 @@ import (
 	"io"
 	"net/http"
 	"strings"
-	"tic-tac-toe-backends/pkg/models/operations"
-	"tic-tac-toe-backends/pkg/models/sdkerrors"
-	"tic-tac-toe-backends/pkg/utils"
+	"tic-tac-toe-backends/v2/pkg/models/operations"
+	"tic-tac-toe-backends/v2/pkg/models/sdkerrors"
+	"tic-tac-toe-backends/v2/pkg/utils"
 	"time"
 )
 
@@ -121,9 +121,9 @@ func New(opts ...SDKOption) *TicTacToeBackends {
 		sdkConfiguration: sdkConfiguration{
 			Language:          "go",
 			OpenAPIDocVersion: "1.0.0",
-			SDKVersion:        "1.6.0",
-			GenVersion:        "2.172.4",
-			UserAgent:         "speakeasy-sdk/go 1.6.0 2.172.4 1.0.0 tic-tac-toe-backends",
+			SDKVersion:        "2.0.0",
+			GenVersion:        "2.181.1",
+			UserAgent:         "speakeasy-sdk/go 2.0.0 2.181.1 1.0.0 tic-tac-toe-backends",
 		},
 	}
 	for _, opt := range opts {
@@ -186,6 +186,10 @@ func (s *TicTacToeBackends) Get(ctx context.Context) (*operations.GetResponse, e
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
+	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
+		fallthrough
+	case httpRes.StatusCode >= 500 && httpRes.StatusCode < 600:
+		return nil, sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
 	}
 
 	return res, nil
@@ -236,6 +240,10 @@ func (s *TicTacToeBackends) GetVersion(ctx context.Context) (*operations.GetVers
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
+	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
+		fallthrough
+	case httpRes.StatusCode >= 500 && httpRes.StatusCode < 600:
+		return nil, sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
 	}
 
 	return res, nil
@@ -296,6 +304,10 @@ func (s *TicTacToeBackends) PutGames(ctx context.Context, request []byte) (*oper
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
+	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
+		fallthrough
+	case httpRes.StatusCode >= 500 && httpRes.StatusCode < 600:
+		return nil, sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
 	}
 
 	return res, nil
