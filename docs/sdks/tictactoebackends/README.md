@@ -50,8 +50,10 @@ func main() {
 
 ### Response
 
-**[*operations.GetResponse](../../models/operations/getresponse.md), error**
-
+**[*operations.GetResponse](../../pkg/models/operations/getresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## GetVersion
 
@@ -92,8 +94,10 @@ func main() {
 
 ### Response
 
-**[*operations.GetVersionResponse](../../models/operations/getversionresponse.md), error**
-
+**[*operations.GetVersionResponse](../../pkg/models/operations/getversionresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## PutGames
 
@@ -131,10 +135,12 @@ func main() {
 | Parameter                                             | Type                                                  | Required                                              | Description                                           |
 | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
 | `ctx`                                                 | [context.Context](https://pkg.go.dev/context#Context) | :heavy_check_mark:                                    | The context to use for the request.                   |
-| `request`                                             | [[]byte](../../models//.md)                           | :heavy_check_mark:                                    | The request object to use for the request.            |
+| `request`                                             | [[]byte](../../.md)                                   | :heavy_check_mark:                                    | The request object to use for the request.            |
 
 
 ### Response
 
-**[*operations.PutGamesResponse](../../models/operations/putgamesresponse.md), error**
-
+**[*operations.PutGamesResponse](../../pkg/models/operations/putgamesresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
