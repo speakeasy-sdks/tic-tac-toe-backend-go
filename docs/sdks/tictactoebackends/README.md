@@ -21,9 +21,9 @@ Game Engine API for Tic Tac Toe: Game Engine API for Tic Tac Toe
 package main
 
 import(
+	tictactoebackends "tic-tac-toe-backends/v2"
 	"context"
 	"log"
-	tictactoebackends "tic-tac-toe-backends/v2"
 )
 
 func main() {
@@ -65,9 +65,9 @@ func main() {
 package main
 
 import(
+	tictactoebackends "tic-tac-toe-backends/v2"
 	"context"
 	"log"
-	tictactoebackends "tic-tac-toe-backends/v2"
 )
 
 func main() {
@@ -109,10 +109,9 @@ func main() {
 package main
 
 import(
+	tictactoebackends "tic-tac-toe-backends/v2"
 	"context"
 	"log"
-	tictactoebackends "tic-tac-toe-backends/v2"
-	"tic-tac-toe-backends/v2/pkg/models/shared"
 )
 
 func main() {
