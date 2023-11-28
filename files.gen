@@ -24,7 +24,6 @@ pkg/utils/utils.go
 /pkg/models/shared/version.go
 /pkg/models/shared/move.go
 /pkg/models/shared/moveparameter.go
-USAGE.md
 docs/pkg/models/operations/getresponse.md
 docs/pkg/models/operations/getversionresponse.md
 docs/pkg/models/operations/putgamesresponse.md
@@ -46,4 +45,5 @@ docs/pkg/models/shared/move.md
 docs/pkg/models/shared/moveparametermove.md
 docs/pkg/models/shared/moveparameter.md
 docs/sdks/tictactoebackends/README.md
+USAGE.md
 .gitattributes
