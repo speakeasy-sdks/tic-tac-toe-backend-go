@@ -121,9 +121,9 @@ func New(opts ...SDKOption) *TicTacToeBackends {
 		sdkConfiguration: sdkConfiguration{
 			Language:          "go",
 			OpenAPIDocVersion: "1.0.0",
-			SDKVersion:        "2.0.3",
-			GenVersion:        "2.202.2",
-			UserAgent:         "speakeasy-sdk/go 2.0.3 2.202.2 1.0.0 tic-tac-toe-backends",
+			SDKVersion:        "2.1.0",
+			GenVersion:        "2.213.3",
+			UserAgent:         "speakeasy-sdk/go 2.1.0 2.213.3 1.0.0 tic-tac-toe-backends",
 		},
 	}
 	for _, opt := range opts {
