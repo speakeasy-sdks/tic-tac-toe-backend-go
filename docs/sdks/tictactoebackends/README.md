@@ -53,7 +53,7 @@ func main() {
 **[*operations.GetResponse](../../pkg/models/operations/getresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetVersion
 
@@ -97,7 +97,7 @@ func main() {
 **[*operations.GetVersionResponse](../../pkg/models/operations/getversionresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PutGames
 
@@ -142,4 +142,4 @@ func main() {
 **[*operations.PutGamesResponse](../../pkg/models/operations/putgamesresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
