@@ -1,0 +1,67 @@
+lockVersion: 2.0.0
+id: 475d21b5-3885-4ef3-bf3e-f7b37034a52b
+management:
+  docChecksum: 8ec132ab79d26472fccfd64e44bb0a25
+  docVersion: 1.0.0
+  speakeasyVersion: internal
+  generationVersion: 2.225.2
+  releaseVersion: 2.1.1
+  configChecksum: dfb4f4bcbef03f395d89a11f0716aaf3
+  repoURL: https://github.com/speakeasy-sdks/tic-tac-toe-backend-go.git
+  repoSubDirectory: .
+  installationURL: https://github.com/speakeasy-sdks/tic-tac-toe-backend-go
+  published: true
+features:
+  go:
+    core: 3.3.0
+    globalServerURLs: 2.82.1
+generatedFiles:
+  - tictactoebackends.go
+  - go.mod
+  - go.sum
+  - tests/helpers.go
+  - pkg/models/sdkerrors/sdkerror.go
+  - pkg/types/bigint.go
+  - pkg/types/date.go
+  - pkg/types/datetime.go
+  - pkg/types/decimal.go
+  - pkg/types/pointers.go
+  - pkg/utils/contenttype.go
+  - pkg/utils/form.go
+  - pkg/utils/headers.go
+  - pkg/utils/json.go
+  - pkg/utils/pathparams.go
+  - pkg/utils/queryparams.go
+  - pkg/utils/requestbody.go
+  - pkg/utils/retries.go
+  - pkg/utils/security.go
+  - pkg/utils/utils.go
+  - /pkg/models/operations/get.go
+  - /pkg/models/operations/getversion.go
+  - /pkg/models/operations/putgames.go
+  - /pkg/models/shared/version.go
+  - /pkg/models/shared/move.go
+  - /pkg/models/shared/moveparameter.go
+  - docs/pkg/models/operations/getresponse.md
+  - docs/pkg/models/operations/getversionresponse.md
+  - docs/pkg/models/operations/putgamesresponse.md
+  - docs/pkg/models/shared/version.md
+  - docs/pkg/models/shared/currentmark.md
+  - docs/pkg/models/shared/grid.md
+  - docs/pkg/models/shared/movegrid.md
+  - docs/pkg/models/shared/moveschemasstartingmark.md
+  - docs/pkg/models/shared/moveafterstate.md
+  - docs/pkg/models/shared/moveschemasgrid.md
+  - docs/pkg/models/shared/movestartingmark.md
+  - docs/pkg/models/shared/beforestate.md
+  - docs/pkg/models/shared/mark.md
+  - docs/pkg/models/shared/possiblemoves.md
+  - docs/pkg/models/shared/startingmark.md
+  - docs/pkg/models/shared/winner.md
+  - docs/pkg/models/shared/afterstate.md
+  - docs/pkg/models/shared/move.md
+  - docs/pkg/models/shared/moveparametermove.md
+  - docs/pkg/models/shared/moveparameter.md
+  - docs/sdks/tictactoebackends/README.md
+  - USAGE.md
+  - .gitattributes
