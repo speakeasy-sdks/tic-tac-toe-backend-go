@@ -9,9 +9,9 @@ import (
 	"io"
 	"net/http"
 	"strings"
-	"tic-tac-toe-backends/v2/pkg/models/operations"
-	"tic-tac-toe-backends/v2/pkg/models/sdkerrors"
-	"tic-tac-toe-backends/v2/pkg/utils"
+	"tic-tac-toe-backends/v3/pkg/models/operations"
+	"tic-tac-toe-backends/v3/pkg/models/sdkerrors"
+	"tic-tac-toe-backends/v3/pkg/utils"
 	"time"
 )
 
@@ -121,9 +121,9 @@ func New(opts ...SDKOption) *TicTacToeBackends {
 		sdkConfiguration: sdkConfiguration{
 			Language:          "go",
 			OpenAPIDocVersion: "1.0.0",
-			SDKVersion:        "2.1.2",
-			GenVersion:        "2.237.2",
-			UserAgent:         "speakeasy-sdk/go 2.1.2 2.237.2 1.0.0 tic-tac-toe-backends",
+			SDKVersion:        "3.0.0",
+			GenVersion:        "2.248.1",
+			UserAgent:         "speakeasy-sdk/go 3.0.0 2.248.1 1.0.0 tic-tac-toe-backends",
 		},
 	}
 	for _, opt := range opts {

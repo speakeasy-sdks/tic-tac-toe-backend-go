@@ -4,9 +4,9 @@ management:
   docChecksum: 8ec132ab79d26472fccfd64e44bb0a25
   docVersion: 1.0.0
   speakeasyVersion: internal
-  generationVersion: 2.237.2
-  releaseVersion: 2.1.2
-  configChecksum: 8a2ed424bdee2cbd1d3e5f9a71a72fda
+  generationVersion: 2.248.1
+  releaseVersion: 3.0.0
+  configChecksum: d6db1e5cc089e8df1d0f39cfc29dba3d
   repoURL: https://github.com/speakeasy-sdks/tic-tac-toe-backend-go.git
   repoSubDirectory: .
   installationURL: https://github.com/speakeasy-sdks/tic-tac-toe-backend-go

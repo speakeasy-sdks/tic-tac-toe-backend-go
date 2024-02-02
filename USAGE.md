@@ -5,7 +5,7 @@ package main
 import (
 	"context"
 	"log"
-	tictactoebackends "tic-tac-toe-backends/v2"
+	tictactoebackends "tic-tac-toe-backends/v3"
 )
 
 func main() {

@@ -165,3 +165,13 @@ Based on:
 - [go v2.1.2] .
 ### Releases
 - [Go v2.1.2] https://github.com/speakeasy-sdks/tic-tac-toe-backend-go/releases/tag/v2.1.2 - .
+
+## 2024-02-02 00:18:53
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 
+- Speakeasy CLI 1.164.0 (2.248.1) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [go v3.0.0] .
+### Releases
+- [Go v3.0.0] https://github.com/speakeasy-sdks/tic-tac-toe-backend-go/releases/tag/v3.0.0 - .

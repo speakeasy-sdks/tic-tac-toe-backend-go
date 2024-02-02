@@ -12,7 +12,7 @@ import (
 	"time"
 	"unsafe"
 
-	"tic-tac-toe-backends/v2/pkg/types"
+	"tic-tac-toe-backends/v3/pkg/types"
 
 	"github.com/ericlagergren/decimal"
 )

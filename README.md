@@ -19,7 +19,7 @@ package main
 import (
 	"context"
 	"log"
-	tictactoebackends "tic-tac-toe-backends/v2"
+	tictactoebackends "tic-tac-toe-backends/v3"
 )
 
 func main() {
@@ -81,8 +81,8 @@ import (
 	"context"
 	"errors"
 	"log"
-	tictactoebackends "tic-tac-toe-backends/v2"
-	"tic-tac-toe-backends/v2/pkg/models/sdkerrors"
+	tictactoebackends "tic-tac-toe-backends/v3"
+	"tic-tac-toe-backends/v3/pkg/models/sdkerrors"
 )
 
 func main() {
@@ -125,7 +125,7 @@ package main
 import (
 	"context"
 	"log"
-	tictactoebackends "tic-tac-toe-backends/v2"
+	tictactoebackends "tic-tac-toe-backends/v3"
 )
 
 func main() {
@@ -156,7 +156,7 @@ package main
 import (
 	"context"
 	"log"
-	tictactoebackends "tic-tac-toe-backends/v2"
+	tictactoebackends "tic-tac-toe-backends/v3"
 )
 
 func main() {

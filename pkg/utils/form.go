@@ -12,7 +12,7 @@ import (
 
 	"github.com/ericlagergren/decimal"
 
-	"tic-tac-toe-backends/v2/pkg/types"
+	"tic-tac-toe-backends/v3/pkg/types"
 )
 
 func populateForm(paramName string, explode bool, objType reflect.Type, objValue reflect.Value, delimiter string, getFieldName func(reflect.StructField) string) url.Values {
