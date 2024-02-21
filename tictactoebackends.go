@@ -123,9 +123,9 @@ func New(opts ...SDKOption) *TicTacToeBackends {
 		sdkConfiguration: sdkConfiguration{
 			Language:          "go",
 			OpenAPIDocVersion: "1.0.0",
-			SDKVersion:        "3.1.0",
-			GenVersion:        "2.258.0",
-			UserAgent:         "speakeasy-sdk/go 3.1.0 2.258.0 1.0.0 tic-tac-toe-backends",
+			SDKVersion:        "3.1.1",
+			GenVersion:        "2.263.3",
+			UserAgent:         "speakeasy-sdk/go 3.1.1 2.263.3 1.0.0 tic-tac-toe-backends",
 			Hooks:             hooks.New(),
 		},
 	}
@@ -164,12 +164,12 @@ func (s *TicTacToeBackends) Get(ctx context.Context) (*operations.GetResponse, e
 	req.Header.Set("Accept", "*/*")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
-	client := s.sdkConfiguration.DefaultClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.DefaultClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -192,7 +192,6 @@ func (s *TicTacToeBackends) Get(ctx context.Context) (*operations.GetResponse, e
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.GetResponse{
@@ -243,12 +242,12 @@ func (s *TicTacToeBackends) GetVersion(ctx context.Context) (*operations.GetVers
 	req.Header.Set("Accept", "*/*")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
-	client := s.sdkConfiguration.DefaultClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.DefaultClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -271,7 +270,6 @@ func (s *TicTacToeBackends) GetVersion(ctx context.Context) (*operations.GetVers
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.GetVersionResponse{
@@ -328,12 +326,12 @@ func (s *TicTacToeBackends) PutGames(ctx context.Context, request []byte) (*oper
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 	req.Header.Set("Content-Type", reqContentType)
 
-	client := s.sdkConfiguration.DefaultClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.DefaultClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -356,7 +354,6 @@ func (s *TicTacToeBackends) PutGames(ctx context.Context, request []byte) (*oper
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.PutGamesResponse{

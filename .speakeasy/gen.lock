@@ -4,21 +4,20 @@ management:
   docChecksum: 8ec132ab79d26472fccfd64e44bb0a25
   docVersion: 1.0.0
   speakeasyVersion: internal
-  generationVersion: 2.258.0
-  releaseVersion: 3.1.0
-  configChecksum: 8d5541a6eb8bc777066b3908b8a25a96
+  generationVersion: 2.263.3
+  releaseVersion: 3.1.1
+  configChecksum: f993e66e3f706fd3d34064f7d8601f06
   repoURL: https://github.com/speakeasy-sdks/tic-tac-toe-backend-go.git
   repoSubDirectory: .
   installationURL: https://github.com/speakeasy-sdks/tic-tac-toe-backend-go
   published: true
 features:
   go:
-    core: 3.4.0
+    core: 3.4.1
     globalServerURLs: 2.82.1
 generatedFiles:
   - tictactoebackends.go
   - go.mod
-  - go.sum
   - pkg/models/sdkerrors/sdkerror.go
   - pkg/types/bigint.go
   - pkg/types/date.go
